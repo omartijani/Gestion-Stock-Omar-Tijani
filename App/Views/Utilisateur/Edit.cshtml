@@ -1,0 +1,44 @@
+﻿@model Models.Utilisateur.UtilisateurUpdateProfileVM
+
+@{
+    ViewData["Title"] = "Update Profile";
+
+
+
+}
+
+<div class="container">
+    <h2 class="text-center">Update Profile</h2>
+    <form asp-action="UpdateProfile" method="post">
+        <div class="form-group">
+            <label for="Id">Utilisateur ID</label>
+            <input type="number" class="form-control" asp-for="Id" value="@Model.Id" readonly />
+        </div>
+        <div class="form-group">
+            <label for="Nom">Nom</label>
+            <input type="text" class="form-control" asp-for="Nom" value="@Model.Nom" />
+        </div>
+        <div class="form-group">
+            <label for="Prenom">Prenom</label>
+            <input type="text" class="form-control" asp-for="Prenom" value="@Model.Prenom" />
+        </div>
+        <div class="form-group">
+            <label for="Email">Email</label>
+            <input type="text" class="form-control" asp-for="Email" value="@Model.Email" />
+        </div>
+        <div class="form-group">
+            <label for="Password">Password</label>
+            <input type="password" class="form-control" asp-for="Password" value="@Model.Password" />
+        </div>
+        <div class="form-group">
+            <label for="Adress">Adress</label>
+            <input type="text" class="form-control" asp-for="Adress" value="@Model.Adress" />
+        </div>
+        <div class="form-group">
+            <label for="Telephone">Telephone</label>
+            <input type="number" class="form-control" asp-for="Telephone" value="@Model.Telephone" />
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>

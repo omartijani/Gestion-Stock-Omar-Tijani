@@ -1,0 +1,49 @@
+﻿@model List<Models.Entree.EntreeListVM>
+
+@{
+    ViewData["Title"] = "Entree List";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2 class="text-center">
+            Entree List
+        </h2>
+        <button class="btn btn-sm btn-primary" style="background-color: blue; border-color: blue;">
+            <a asp-controller="Entree" asp-action="Create" class="text-white">
+                <i class="bi bi-plus"></i> Ajouter 
+            </a>
+        </button>
+    </div>
+    
+    
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Produit ID</th>
+                    <th>Prix Entree</th>
+                    <th>Date Entree</th>
+                    <th>Quantite</th>
+                    <th>Go Detail</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var entree in Model)
+                {
+                    <tr>
+                        <td>@entree.Id</td>
+                        <td>@entree.IdProduit</td>
+                        <td>@entree.PrixEntree</td>
+                        <td>@entree.DateEntree.ToString("yyyy-MM-dd ")</td>
+                        <td>@entree.Quantite</td>
+                        <td>
+                            <a class="btn btn-primary  " asp-controller="Entree" asp-action="Detail" asp-route-id="@entree.Id"><i class="bi bi-eye-fill"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

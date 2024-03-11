@@ -1,0 +1,46 @@
+﻿@model List<Models.Produit.ProduitListVM>
+
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+        <h2 class="text-center">
+            Produit List
+        </h2>
+        <button class="btn btn-sm btn-primary" style="background-color: blue; border-color: blue;">
+            <a asp-controller="Produit" asp-action="Create" class="text-white">
+                <i class="bi bi-plus"></i> Ajouter
+            </a>
+        </button>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Go Detail</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var produit in Model)
+        {
+            <tr>
+                <td>@produit.Id</td>
+                <td>@produit.Nom</td>
+                <td>
+                             <img src="./images/@produit.Image" />
+
+
+                </td>
+                <td>
+                            <a class="btn btn-sm btn-primary"  asp-controller="Produit" asp-action="Detail" asp-route-id="@produit.Id"><i class="bi bi-eye-fill"></i></a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+</div>
+

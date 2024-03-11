@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="d-flex mt-5 ">
+    <div class="card mx-4" style="width: 18rem;">
+        <img src="./images/stock.png" class="card-img-top" alt="stock" />
+  <div class="card-body">
+    <h5 class="card-title">Stock</h5>
+
+            <a class="btn btn-primary" asp-controller="Stock" asp-action="Index">Go to Stock list</a>
+
+  </div>
+</div>
+    <div class="card mx-4" style="width: 18rem;">
+        <img src="./images/entree.png" class="card-img-top" alt="entree">
+  <div class="card-body">
+    <h5 class="card-title">Entree</h5>
+
+     <a class="btn btn-primary" asp-controller="Entree" asp-action="Index">Go to Entree list</a>
+
+  </div>
+</div>
+    <div class="card mx-4" style="width: 18rem;">
+        <img src="./images/sortie.png" class="card-img-top" alt="sortie">
+        <div class="card-body">
+            <h5 class="card-title">Sortie</h5>
+
+            <a class="btn btn-primary" asp-controller="Sortie" asp-action="Index">Go to Sortie list</a>
+
+        </div>
+    </div>
+    <div class="card mx-4" style="width: 18rem;">
+        <img src="./images/produit.png" class="card-img-top" alt="produit">
+        <div class="card-body">
+            <h5 class="card-title">Produit</h5>
+             
+            
+            <a class="btn btn-primary" asp-controller="Produit" asp-action="Index" >Go to Produit list</a>
+        </div>
+    </div>
+
+</div>

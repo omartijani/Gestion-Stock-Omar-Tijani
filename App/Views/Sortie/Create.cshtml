@@ -1,0 +1,40 @@
+﻿@using System.Security.Claims;
+@model Models.Sortie.SortieCreateVM
+
+@{
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    ViewData["Title"] = "Create Sortie";
+}
+
+<div class="container">
+    <h2 class="text-center">Create Sortie</h2>
+    <form asp-action="Create" method="post">
+        <div class="form-group">
+            <label asp-for="IdProduit"></label>
+            <input asp-for="IdProduit" class="form-control" />
+            <span asp-validation-for="IdProduit" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="IdUtilisateur"></label>
+            <input asp-for="IdUtilisateur" class="form-control" value="@userId" readonly />
+            <span asp-validation-for="IdUtilisateur" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="PrixSortie"></label>
+            <input asp-for="PrixSortie" class="form-control" />
+            <span asp-validation-for="PrixSortie" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="DateSortie"></label>
+            <input asp-for="DateSortie" type="date" class="form-control" />
+            <span asp-validation-for="DateSortie" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Quantite"></label>
+            <input asp-for="Quantite" class="form-control" />
+            <span asp-validation-for="Quantite" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
+

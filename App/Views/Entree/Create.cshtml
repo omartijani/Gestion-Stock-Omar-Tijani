@@ -1,0 +1,37 @@
+﻿@using System.Security.Claims;
+@model Models.Entree.EntreeCreateVM
+
+@{
+    ViewData["Title"] = "Create Entree";
+    
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+}
+
+<div class="container">
+    <h2 class="text-center">Create Entree</h2>
+    <form asp-action="Create" method="post">
+        <div class="form-group">
+            <label for="IdProduit">Produit ID</label>
+            <input type="number" class="form-control" asp-for="IdProduit" />
+        </div>
+        <div class="form-group">
+            <label for="IdUtilisateur">Utilisateur ID</label>
+            <input type="number" class="form-control" asp-for="IdUtilisateur" value="@userId" readonly />
+        </div>
+        <div class="form-group">
+            <label for="PrixEntree">Prix Entree</label>
+            <input type="text" class="form-control" asp-for="PrixEntree" />
+        </div>
+        <div class="form-group">
+            <label for="DateEntree">Date Entree</label>
+            <input type="date" class="form-control" asp-for="DateEntree" />
+        </div>
+        <div class="form-group">
+            <label for="Quantite">Quantite</label>
+            <input type="number" class="form-control" asp-for="Quantite" />
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
+

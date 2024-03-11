@@ -1,0 +1,48 @@
+﻿@model List<Models.Sortie.SortieListVM>
+
+@{
+    ViewData["Title"] = "Sortie List";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center">
+    <h2 class="text-center"> Sortie List
+        </h2>
+    <button class="btn btn-sm btn-primary" style="background-color: blue; border-color: blue;">
+            <a asp-controller="Sortie" asp-action="Create" class="text-white">
+            <i class="bi bi-plus"></i> Ajouter Sortie
+        </a>
+    </button>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Produit ID</th>
+                    <th>Prix Sortie</th>
+                    <th>Date Sortie</th>
+                    <th>Quantite</th>
+                    <th>Go Detail</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var sortie in Model)
+                {
+                    <tr>
+                        <td>@sortie.Id</td>
+                        <td>@sortie.IdProduit</td>
+                        <td>@sortie.PrixSortie</td>
+                        <td>@sortie.DateSortie.ToString("yyyy-MM-dd ")</td>
+                        <td>@sortie.Quantite</td>
+                        <td>
+                            <a class="btn btn-primary  " asp-controller="Sortie" asp-action="Detail" asp-route-id="@sortie.Id"><i class="bi bi-eye-fill"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

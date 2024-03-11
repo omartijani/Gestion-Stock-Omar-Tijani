@@ -1,0 +1,39 @@
+﻿@model Models.Sortie.SortieDetailVM
+
+@{
+    ViewData["Title"] = "Sortie Details";
+}
+
+<div class="container">
+    <h2 class="text-center">Sortie Details</h2>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <table class="table table-bordered">
+                <tr>
+                    <th>ID</th>
+                    <td>@Model.Id</td>
+                </tr>
+                <tr>
+                    <th>Produit ID</th>
+                    <td>@Model.IdProduit</td>
+                </tr>
+                <tr>
+                    <th>Utilisateur ID</th>
+                    <td>@Model.IdUtilisateur</td>
+                </tr>
+                <tr>
+                    <th>Prix Sortie</th>
+                    <td>@Model.PrixSortie</td>
+                </tr>
+                <tr>
+                    <th>Date Sortie</th>
+                    <td>@Model.DateSortie.ToString("yyyy-MM-dd ")</td>
+                </tr>
+                <tr>
+                    <th>Quantite</th>
+                    <td>@Model.Quantite</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
